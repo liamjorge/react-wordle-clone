@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Gameboard from "./components/Gameboard";
+import Inputfield from "./components/Inputfield";
+import { useState } from "react";
 
 function App() {
+  const wordList = ["river", "dream", "happy"];
+  const randomNum = Math.floor(Math.random() * wordList.length);
+  const [correctWord, setCorrectWord] = useState(wordList[randomNum]);
+  const [guesses, setGuesses] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Gameboard correctWord={correctWord} guesses={guesses} />
+      <Inputfield guesses={guesses} setGuesses={setGuesses} />
     </div>
   );
 }
