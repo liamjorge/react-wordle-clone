@@ -6,6 +6,7 @@ const Gameboard = (props) => {
     for (let i=0; i<5; i++) {
         wordContainers.push(<Wordcontainer correctWord={correctWord} guess={ guesses[i]!=undefined ? guesses[i] : ""} key={i} />)
     }
+    
 
     return (
         <section className="word-grid">
