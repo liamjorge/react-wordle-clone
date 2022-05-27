@@ -101,14 +101,12 @@ button span:nth-child(4) {
 
 
 .form__group {
-  position: relative;
   padding: 15px 0 0;
   width: 50%;
   margin: 0 auto;
 }
 
 .form__field {
-  font-family: inherit;
   width: 80%;
   border: 0;
   border-bottom: 2px solid gray;
@@ -126,14 +124,12 @@ button span:nth-child(4) {
 
 
 .form__label {
-  display: block;
   transition: 0.2s;
   font-size: 1.3rem;
   color: white;
 }
 
 .form__field:focus .form__label {
-    display: block;
     transition: 0.2s;
     font-size: 1rem;
     color: #11998e;
