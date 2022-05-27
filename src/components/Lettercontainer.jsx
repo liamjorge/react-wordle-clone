@@ -9,9 +9,9 @@ const Lettercontainer = (props) => {
         squareColour = "white"
     }
     else if (guessedLetter === correctLetter) {
-        squareColour = "green";
+        squareColour = "#419D78"; //green
     } else if (correctWord.split("").includes(guessedLetter) ){
-        squareColour = "yellow";
+        squareColour = "#E0A458"; //orange
     } else {
         squareColour = "grey";
     }
@@ -23,7 +23,7 @@ const Lettercontainer = (props) => {
 
     return (
     <div className="letter-container" style={{backgroundColor: squareColour}}>
-        {guessedLetter}
+        <span className="letter">{guessedLetter}</span>
     </div>)
 }
 

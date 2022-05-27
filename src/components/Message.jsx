@@ -11,10 +11,11 @@ const SuccessMessage = (props) => {
         if(setIsWinner) setIsWinner(false);
         if(setIsLoser) setIsLoser(false);
     }
+    const successMessage = `Congratulations, you won in ${totalGuesses} ` + (totalGuesses===1 ? `guess!` : `guesses!`)
 
     return <>
-        <h3>{setIsWinner ? `Congratulations, you won in ${totalGuesses} guesses!!` : "You lost..."}</h3>
-        <button onClick={handleClick}>Play again</button>
+        <h3>{setIsWinner ? successMessage : "You lost..."}</h3>
+        <button onClick={handleClick}>Play again<span></span><span></span><span></span><span></span></button>
     </>
 }
 

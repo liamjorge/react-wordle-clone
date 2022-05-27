@@ -36,10 +36,11 @@ const Inputfield = (props) => {
 
     return (
     <>
-    <form onSubmit={handleSubmit}>
-        <label htmlFor="input-word">Take a guess</label>
+    <form onSubmit={handleSubmit} className="form__group">
+        <label htmlFor="input-word" className="form__label">Take a guess</label>
         <input 
          value={inputValue}
+         className="form__field"
          onChange={(event) => {
              setIsHidden(true);
              if (event.target.value.length <= 5) {
@@ -47,8 +48,8 @@ const Inputfield = (props) => {
             }}
          id="input-word"
         />
-        <button type="submit">Submit</button>
-        <p style={{visibility: isHidden ? "hidden" : "visible"}}>Guess must be 5 letters</p>
+        <button type="submit">Submit<span></span><span></span><span></span><span></span></button>
+        <p style={{visibility: isHidden ? "hidden" : "visible" , color: "red"}}>Guess must be 5 letters</p>
     </form>
     </>
     )

@@ -1,11 +1,13 @@
 .App {
   text-align: center;
+
 }
 
 .word-grid {
   display: flex; 
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .word-container {
@@ -13,8 +15,134 @@
 }
 
 .letter-container {
-  height: 2rem;
-  line-height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  width: 2.5rem;
   border: 1px solid black;
+}
+
+.letter {
+  font-weight: 800;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: .1px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-image: url(images/orange_background.jpg);
+  background-position: 0% 20%; 
+}
+
+h3 {
+  color: #419D78;
+}
+
+
+button {
+  --btncolour: #E0A458;
+  color: var(--btncolour);
+  font-size: 16px;
+  border: 0.3em solid var(--btncolour);
+  border-radius: 0.5em;
+  width: 10rem;
+  height: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+  background-color: #2D3047;
+  cursor:pointer;
+}
+
+button span{
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--btncolour);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+button:hover {
+  color: #2D3047;
+}
+
+button:hover span {
+  transform: translateY(0) scale(2)
+}
+
+button span:nth-child(1) {
+  --n: 1;
+}
+
+button span:nth-child(2) {
+  --n: 2;
+}
+
+button span:nth-child(3) {
+  --n: 3;
+}
+
+button span:nth-child(4) {
+  --n: 4;
+}
+
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+
+.form__label {
+  display: block;
+  transition: 0.2s;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.form__field:focus .form__label {
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+  }
+
+
+.form__field:focus {
+  padding-bottom: 6px;  
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e,#38ef7d);
+  border-image-slice: 1;
 }
